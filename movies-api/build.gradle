@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    // simplifies the build and deployment process for Spring Boot applications.
+    id 'org.springframework.boot' version '3.1.5'
+    // manage dependencies in a Spring project.
+    id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'movies-api'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+// adds the Maven Central Repository as a source for dependencies.
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // hibernate in mem db
+    runtimeOnly 'com.h2database:h2'
+    // support for openAPI documentation
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.2.0'
+    // starters -> include necessary dependencies for spring boot
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    runtimeOnly 'org.postgresql:postgresql'
+}
+
+test {
+    useJUnitPlatform()
+}

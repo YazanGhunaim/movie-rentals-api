@@ -1,0 +1,12 @@
+stages:
+  - build
+
+before_script:
+  - cd movies-api/  
+
+build:
+  stage: build
+  image: eclipse-temurin:17-alpine
+  script:
+    - ./gradlew test
+
