@@ -44,6 +44,3 @@ the Movies entity based on genre and availability status.
 
 ### Renting Movies (Client):
 Customers can select one or more movies to rent. Then will go over all movies/movie that he rented and add them one by one to his rentedmovies, updating his original rentedmovies list.
-
-## Object Data Model
-![object data model](media/checkpoint/UML class.png)
